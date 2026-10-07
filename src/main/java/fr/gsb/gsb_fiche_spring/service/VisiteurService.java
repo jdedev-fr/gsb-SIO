@@ -1,5 +1,6 @@
 package fr.gsb.gsb_fiche_spring.service;
 
+import fr.gsb.gsb_fiche_spring.entities.Visiteur;
 import fr.gsb.gsb_fiche_spring.exception.VisiteurNonTrouveException;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
-/*@Service
+@Service
 public class VisiteurService {
     private Map<String, Visiteur> visiteurs;
 
@@ -33,4 +34,4 @@ public class VisiteurService {
             return v;
         }
     }
-}*/
+}

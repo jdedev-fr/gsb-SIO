@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 
 @Repository
-public interface FraisRepository extends JpaRepository<FicheDeFrais,String> {
+public interface FraisRepository extends JpaRepository<FicheDeFrais,Integer> {
 }

@@ -1,8 +1,7 @@
 package fr.gsb.gsb_fiche_spring.controller;
 
 import fr.gsb.gsb_fiche_spring.dto.FraisServiceDTO;
-import fr.gsb.gsb_fiche_spring.entities.FicheDeFrais;
-import fr.gsb.gsb_fiche_spring.service.FraisService;
+import fr.gsb.gsb_fiche_spring.service.IFraisService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +10,9 @@ import java.util.List;
 
 @RestController
 public class FraisController {
-    private FraisService service;
+    private IFraisService service;
 
-    FraisController(FraisService service) {
+    FraisController(IFraisService service) {
         this.service=service;
     }
 
@@ -23,7 +22,7 @@ public class FraisController {
     }
 
     @GetMapping(value="/api/fiches-frais/{id}")
-    public FraisServiceDTO getFicheParId(@PathVariable String id){
+    public FraisServiceDTO getFicheParId(@PathVariable Integer id){
         return service.getById(id);
     }
 

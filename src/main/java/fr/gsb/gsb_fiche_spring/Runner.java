@@ -1,7 +1,9 @@
 package fr.gsb.gsb_fiche_spring;
 
-import fr.gsb.gsb_fiche_spring.service.FraisService;
-//import fr.gsb.gsb_fiche_spring.service.VisiteurService;
+import fr.gsb.gsb_fiche_spring.dto.FraisServiceDTO;
+import fr.gsb.gsb_fiche_spring.entities.Visiteur;
+import fr.gsb.gsb_fiche_spring.service.IFraisService;
+import fr.gsb.gsb_fiche_spring.service.VisiteurService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -9,14 +11,11 @@ import java.util.List;
 
 @Component
 public class Runner implements CommandLineRunner {
-    private FraisService fraisService;
-   // private VisiteurService visiteurService;
+    private IFraisService fraisService;
+    private VisiteurService visiteurService;
 
-public Runner(){}
 
-    @Override
-    public void run(String... args) throws Exception { }
-  /* public Runner(FraisService fraisService, VisiteurService visiteurService){
+    public Runner(IFraisService fraisService, VisiteurService visiteurService){
         this.fraisService=fraisService;
         this.visiteurService=visiteurService;
     }
@@ -26,7 +25,7 @@ public Runner(){}
         //TODO Chercher un visiteur + afficher le visiteur et la liste des fiches de frais
         Visiteur v = visiteurService.trouverParId("V1");
         System.out.println(v);
-        List<FicheDeFrais> fiches = fraisService.getFiches();
+        List<FraisServiceDTO> fiches = fraisService.getFiches();
         System.out.println(fiches);
-    }*/
+    }
 }
